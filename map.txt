@@ -1,10 +1,49 @@
 " "から始まる行と空行は無視します。
 " 変換元と変換先をスペース区切りで各行に記述してください。
 
+" 上/下付き
+^^ ^{}<Left>
+__ _{}<Left>
+
 " 太字
 B@ B
 B<Space> B<Space>
 B \bm{}<Left>
+
+" 分数
+F@ F
+F<Space> F<Space>
+F \frac{}{}<Left><Left><Left>
+
+" 文字列
+R@ R
+R \mathrm{}<Left>
+
+" 量子力学
+" |はそのまま入力するとエラーになるので<Bar>と入力する
+Qk \ket{}<Left>
+QK \Ket{}<Left>
+Qb \bra{}<Left>
+QB \Bra{}<Left>
+Q2 \braket{<Bar>}<Left><Left>
+Q" \Braket{<Bar>}<Left><Left>
+Q3 \braket{<Bar><Bar>}<Left><Left><Left>
+Q# \Braket{<Bar><Bar>}<Left><Left><Left>
+Qh \hbar
+
+" 矢印
+A<Up> \uparrow
+A<Down> \downarrow
+A<Left> \leftarrow
+A<Right> \rightarrow
+
+" 積分
+Si \int
+SI \int_{}^{}<Left><Left><Left><Left>
+Ss \sum
+SS \sum_{}^{}<Left><Left><Left><Left>
+Sp \prod
+SP \prod_{}^{}<Left><Left><Left><Left>
 
 " ギリシャ文字
 Ga \alpha

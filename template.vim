@@ -10,6 +10,12 @@ scriptencoding utf-8
 
 " 数式入力用キーマップを用いて挿入モードに入る
 :nnoremap <buffer> <Leader>mi :Math<CR>i
+:nnoremap <buffer> <Leader>ma :Math<CR>a
+:nnoremap <buffer> <Leader>mI :Math<CR>i$$<Left>
+:nnoremap <buffer> <Leader>mA :Math<CR>a$$<Left>
+:nnoremap <buffer> <Leader>mo :Math<CR>o\[<CR>\]<Up><End><CR>
+:nnoremap <buffer> <Leader>mO :Math<CR>o\begin{equation}<CR>\end{equation}<Up><End><CR>
+
 
 " 挿入モードから抜けるときに自動で普通のキーマップに戻す
 :autocmd InsertLeave <buffer> UnMath
